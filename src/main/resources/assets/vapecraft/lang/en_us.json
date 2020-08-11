@@ -1,4 +1,6 @@
 {
   "item.vapecraft.juul": "Juul",
+  "item.vapecraft.nicotine_salt": "Nicotine Salt",
+  "block.vapecraft.nicotine_ore": "Nicotine Ore",
   "itemGroup.vape": "VapeCraft"
 }

@@ -33,6 +33,7 @@ public class ModClientEvents {
         if (player.getHeldItemMainhand().getItem() == RegistryHandler.JUUL.get()) {
             // VapeCraft.LOGGER.info("juul rip!");
             World worldIn = event.getWorld();
+
             double p0 = player.getPosX();
             double p1 = player.getPosY() + player.getEyeHeight() - .1D;
             double p2 = player.getPosZ();
@@ -41,7 +42,7 @@ public class ModClientEvents {
                 double r0 = rand.nextDouble()/3;
                 double r1 = rand.nextDouble()/3;
                 double r2 = rand.nextDouble()/3;
-                worldIn.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, p0, p1, p2, lookVec.x + r0, lookVec.y + r1, lookVec.z + r2);
+                worldIn.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, p0, p1, p2, (lookVec.x + r0)/6, (lookVec.y + r1)/6, (lookVec.z + r2)/6);
             }
         }
     }

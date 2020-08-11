@@ -22,11 +22,6 @@ public class VapeCraft
     public VapeCraft() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
-//        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);  // deleted
-        // Register the processIMC method for modloading
-//        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC); // deleted
-        // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         // My Code!
@@ -36,56 +31,15 @@ public class VapeCraft
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-//        LOGGER.info("HELLO FROM PREINIT");
-//        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-    }
+    private void setup(final FMLCommonSetupEvent event) { }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
-        // do something that can only be done on the client
-//        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
-    }
+    private void doClientStuff(final FMLClientSetupEvent event) { }
 
-    // im writing this to add my own tab!
+    // Create my own tab
     public static final ItemGroup TAB = new ItemGroup("vape") {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(RegistryHandler.JUUL.get());
         }
     };
-
-// I was told to delete these methods
-//    private void enqueueIMC(final InterModEnqueueEvent event)
-//    {
-//        // some example code to dispatch IMC to another mod
-//        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
-//    }
-//
-//    private void processIMC(final InterModProcessEvent event)
-//    {
-//        // some example code to receive and process InterModComms from other mods
-//        LOGGER.info("Got IMC {}", event.getIMCStream().
-//                map(m->m.getMessageSupplier().get()).
-//                collect(Collectors.toList()));
-//    }
-// my guy said to delete these subscribe event methods
-//    // You can use SubscribeEvent and let the Event Bus discover methods to call
-//    @SubscribeEvent
-//    public void onServerStarting(FMLServerStartingEvent event) {
-//        // do something when the server starts
-//        LOGGER.info("HELLO from server starting");
-//    }
-//
-//    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-//    // Event bus for receiving Registry Events)
-//    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-//    public static class RegistryEvents {
-//        @SubscribeEvent
-//        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-//            // register a new block here
-//            LOGGER.info("HELLO from Register Block");
-//        }
-//    }
 }
