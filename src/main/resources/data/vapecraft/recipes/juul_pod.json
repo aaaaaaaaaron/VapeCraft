@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xxx",
+    "xdx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "tag": "minecraft:iron_ingot"
+    },
+    "d":
+    {
+      "tag": "vapecraft:nicotine_salt"
+    }
+  },
+  "result":
+  {
+    "item": "vapecraft:juul_pod",
+    "count": 1
+  }
+}

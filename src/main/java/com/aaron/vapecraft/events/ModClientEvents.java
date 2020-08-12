@@ -30,7 +30,7 @@ public class ModClientEvents {
     public static void juulRip(PlayerInteractEvent.RightClickItem event) {
         Random rand = new Random();
         LivingEntity player = event.getEntityLiving();
-        if (player.getHeldItemMainhand().getItem() == RegistryHandler.JUUL.get()) {
+        if (player.getHeldItemMainhand().getItem() == RegistryHandler.JUUL_WITH_POD.get()) {
             // VapeCraft.LOGGER.info("juul rip!");
             World worldIn = event.getWorld();
 

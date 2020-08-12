@@ -39,7 +39,7 @@ public class VapeCraft
     public static final ItemGroup TAB = new ItemGroup("vape") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegistryHandler.JUUL.get());
+            return new ItemStack(RegistryHandler.JUUL_WITH_POD.get());
         }
     };
 }
