@@ -10,11 +10,11 @@
   {
     "x":
     {
-      "tag": "minecraft:iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "d":
     {
-      "tag": "vapecraft:nicotine_salt"
+      "item": "vapecraft:nicotine_salt"
     }
   },
   "result":

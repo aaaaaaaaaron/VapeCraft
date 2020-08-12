@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "vapecraft:juul_without_pod"
+    },
+    {
+      "item": "vapecraft:juul_pod"
+    }
+  ],
+  "result":
+  {
+    "item": "vapecraft:juul_with_pod",
+    "count": 1
+  }
+}
