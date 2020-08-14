@@ -7,6 +7,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeMod;
@@ -36,7 +37,7 @@ public class JuulRip {
         if (mainHand == RegistryHandler.JUUL_WITH_POD.get()) {
             NicotineAddiction.resetAddiction(); // resets the addiction timer to zero
 
-//            mainHand.setDamage(new ItemStack(0,0), 1);
+            player.getHeldItemMainhand().damageItem(1, player, e -> e.sendBreakAnimation(Hand.MAIN_HAND));
 
             World worldIn = event.getWorld();
 

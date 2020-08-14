@@ -29,9 +29,10 @@ public class RegistryHandler {
 
     // Items
     public static final RegistryObject<Item> JUUL_WITHOUT_POD = ITEMS.register("juul_without_pod", ItemBase::new);
-    public static final RegistryObject<Item> JUUL_WITH_POD = ITEMS.register("juul_with_pod", Juul::new);
     public static final RegistryObject<Item> JUUL_POD = ITEMS.register("juul_pod", ItemBase::new);
     public static final RegistryObject<Item> NICOTINE_SALT = ITEMS.register("nicotine_salt", ItemBase::new);
+
+    public static final RegistryObject<Item> JUUL_WITH_POD = ITEMS.register("juul_with_pod", Juul::new);
 
     // Blocks
     public static final RegistryObject<Block> NICOTINE_ORE = BLOCKS.register("nicotine_ore", NicotineOre::new);
