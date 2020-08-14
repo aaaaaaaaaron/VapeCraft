@@ -24,14 +24,15 @@ import java.util.Random;
 
 // I might want to change Dist.CLIENT to Dist.Server when making vaping a social hobby. (ie making it online)
 @Mod.EventBusSubscriber(modid = VapeCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class ModClientEvents {
+public class JuulRip {
 
     @SubscribeEvent
     public static void juulRip(PlayerInteractEvent.RightClickItem event) {
         Random rand = new Random();
         LivingEntity player = event.getEntityLiving();
         if (player.getHeldItemMainhand().getItem() == RegistryHandler.JUUL_WITH_POD.get()) {
-            // VapeCraft.LOGGER.info("juul rip!");
+            NicotineAddiction.resetAddiction(); // resets the addiction timer to zero
+
             World worldIn = event.getWorld();
 
             double p0 = player.getPosX();
