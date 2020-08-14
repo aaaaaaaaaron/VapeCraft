@@ -25,10 +25,10 @@ import net.minecraft.particles.ParticleTypes;
 
 import java.util.Random;
 
-// I might want to change Dist.CLIENT to Dist.Server when making vaping a social hobby. (ie making it online)
 @Mod.EventBusSubscriber(modid = VapeCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class JuulRip {
 
+    // I should move this into the Juul item class!! For now its fine, though.
     @SubscribeEvent
     public static void juulRip(PlayerInteractEvent.RightClickItem event) {
         Random rand = new Random();
@@ -36,8 +36,6 @@ public class JuulRip {
         Item mainHand = player.getHeldItemMainhand().getItem();
         if (mainHand == RegistryHandler.JUUL_WITH_POD.get()) {
             NicotineAddiction.resetAddiction(); // resets the addiction timer to zero
-
-            player.getHeldItemMainhand().damageItem(1, player, e -> e.sendBreakAnimation(Hand.MAIN_HAND));
 
             World worldIn = event.getWorld();
 
