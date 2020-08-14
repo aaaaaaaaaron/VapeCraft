@@ -43,12 +43,14 @@ public class JuulRip {
             double p0 = player.getPosX();
             double p1 = player.getPosY() + player.getEyeHeight() - .1D;
             double p2 = player.getPosZ();
-            Vector3d lookVec = player.getLookVec();
+            Vector3d lookVec = player.getLookVec(); // gets where the player is looking
+            Vector3d fwrd = player.getMotion(); // gets how fast the player is going
             for (int i = 0; i < 9; i++) {
                 double r0 = rand.nextDouble()/3 - 1d/6d;
                 double r1 = rand.nextDouble()/3 - 1d/6d;
                 double r2 = rand.nextDouble()/3 - 1d/6d;
-                worldIn.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, p0, p1, p2, (lookVec.x + r0)/6, (lookVec.y + r1)/6, (lookVec.z + r2)/6);
+                worldIn.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, p0, p1, p2,
+                        (lookVec.x + r0)/6 + fwrd.x/8, (lookVec.y + r1)/6 + fwrd.y/8, (lookVec.z + r2)/6 + fwrd.z/8);
             }
         }
     }
