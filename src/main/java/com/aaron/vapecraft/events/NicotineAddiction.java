@@ -34,8 +34,8 @@ public class NicotineAddiction {
         tickSum++;
 
         if (tickSum==20*secondsToDamage) {
-            VapeCraft.LOGGER.info("applying damage from addiction")
-            event.player.attackEntityFrom(DamageSource.DROWN, 1.0F)
+            VapeCraft.LOGGER.info("applying damage from addiction");
+            event.player.attackEntityFrom(DamageSource.DROWN, 1.0F);
         tickSum = 0;
         }
     }
