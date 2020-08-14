@@ -4,6 +4,8 @@ import com.aaron.vapecraft.VapeCraft;
 import com.aaron.vapecraft.util.RegistryHandler;
 import com.google.common.eventbus.Subscribe;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,8 +32,11 @@ public class JuulRip {
     public static void juulRip(PlayerInteractEvent.RightClickItem event) {
         Random rand = new Random();
         LivingEntity player = event.getEntityLiving();
-        if (player.getHeldItemMainhand().getItem() == RegistryHandler.JUUL_WITH_POD.get()) {
+        Item mainHand = player.getHeldItemMainhand().getItem();
+        if (mainHand == RegistryHandler.JUUL_WITH_POD.get()) {
             NicotineAddiction.resetAddiction(); // resets the addiction timer to zero
+
+//            mainHand.setDamage(new ItemStack(0,0), 1);
 
             World worldIn = event.getWorld();
 
