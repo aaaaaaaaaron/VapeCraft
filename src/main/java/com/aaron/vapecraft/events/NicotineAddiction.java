@@ -28,7 +28,7 @@ public class NicotineAddiction {
         // From what I have seen there are 80 ticks in a second
         if (tickSum==80*secondsToDamage) {
             VapeCraft.LOGGER.info("applying damage from addiction");
-            event.player.attackEntityFrom(DamageSource.DROWN, 1.0F);
+            event.player.attackEntityFrom(DamageSource.STARVE, 1.0F);
         tickSum = 0;
         }
     }
